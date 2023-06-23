@@ -16,12 +16,12 @@ public class ProxyConnection implements Connection {
 
     @Override
     public void close() {
-
-        ConnectionPool.getInstance().releaseConnection(realConnection);
+        ConnectionPool.getInstance().releaseConnection(this);
     }
 
     @Override
     public boolean isClosed() {
         return false;
     }
+
 }
